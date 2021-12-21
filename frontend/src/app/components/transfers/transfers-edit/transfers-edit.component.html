@@ -1,0 +1,25 @@
+<mat-card style="width: 70%; margin-left: 15%">
+    <mat-card-title class="mb-3 text-center">
+        Editar Transferência
+    </mat-card-title>
+    <form>
+        <mat-form-field>
+            <!-- TwoWayDataBinding e IMPORTANTE!! Precisamos do atributo name no form -->
+            <input matInput placeholder="Nome do Cliente" name="name" [(ngModel)]="transfer.nomeCliente" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Valor (R$)" name="amount" [(ngModel)]="transfer.valor" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Conta corrente" name="account" [(ngModel)]="transfer.contaCliente" />
+        </mat-form-field>
+    </form>
+</mat-card>
+
+<button mat-raised-button color="accent" (click)="updateTransfer()" style="margin-left: 15%">
+    Atualizar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>

@@ -1,0 +1,23 @@
+.sidenav {
+  background-color: #daa520;
+  width: 170px;
+  height: 82.5%;
+  left: 0;
+}
+
+.sidenav i {
+  padding-right: 10px;
+  color: #000
+}
+
+.sidenav span {
+  color: #000
+}
+
+.content {
+  width: auto;
+}
+
+.mat-drawer-container {
+  background-color: #fff;
+}

@@ -1,0 +1,101 @@
+/************************ 1. MYSQL ************************/
+
+/*********/ CRIAÇÃO DE NOVA DATABASE NO MYSQL /*********/
+create database if not exists db_nomedatabase;
+
+/*********/ "ENTRAR" NA DATABASE /*********/
+use db_nomedatabase;
+
+/*********/ CRIANDO NOVA TABELA /*********/
+create table db_nomedatabela (
+    primeira_coluna atributos, --> para a coluna de id, usar como atributos: int not null auto_increment primary key
+    segunda_coluna atributos,
+    terceira_coluna atributos
+);
+
+/*********/ INSERIR DADOS NA TABELA /*********/
+insert into tb_nomedatabela(segunda_coluna, terceira_coluna) values ("", "")
+Não precisa indicar o ID, pois ele é criado automaticamente
+
+/************************ 2. NODE JS ************************/
+
+/*********/ Criar nossa pasta de trabalho /*********/
+
+//Comandos iniciais
+Após criação, inicializar o backend com npm init -y
+Instalação do express, mysql e body-parser
+
+//Organização das pastas
+Criar os arquivos index.js e rotas.js na pasta global
+Criar a pasta config e o arquivo conexao.js dentro dela
+
+/*********/ Arquivo index.js /*********/
+
+//Habilitar leitura de json e strings
+Chamar o app.use para express.json e para express.urlenconded
+OBS.: fazer isso ANTES de chamar a rota por require
+
+//Requerir express, rotas.js e conexao.js
+Para o conexao, não precisamos colocar dentro de variável, uma vez que não utilizaremos como variável
+Para a rota, devemos criar variável, para depois chamá-la no app.use e estabelecer nossas "raízes" da rota (por ex.: "/tarefas" -- todas nossas rotas serão iniciadas com esse caminho)
+
+
+//Criar a variável porta
+Chamar o app.listen
+
+/*********/ Arquivo conexao.js /*********/
+
+//Requerir o mysql
+Através de uma constante
+
+//Conectar o mysql
+Criar uma constante chamando o .createConnection, estabelecendo host, user, password, porta e database.
+Chamar a constante criada com o .connect, em que a callback conterá apenas o erro. Caso não caia no erro, criamos um console.log para imprimir mensagem de que o Banco foi conectado.
+
+//Exportar o módulo
+
+/*********/ Arquivo rotas.js /*********/
+
+//Requerir o módulo do conexao.js
+Criando uma constante, pois a utilizaremos
+
+//Requerir o express utilizando o .Router()
+Criando uma constante, pois a utilizaremos
+
+//Criação das rotas
+** GET geral -- para trazer todos os dados do BD **
+1- criar a rota, com a callback de req/res
+2- criar uma variável let sql para SELECIONAR (select) TODOS (*) os dados DE (from) uma tabela
+3- chamar a variável de conexão e .query, com a variável sql e uma callback com erro/rows/fields
+4- para a resposta, trazer rows em formato json
+
+** GET id -- para mostrar as tarefas daquele ID **
+1- criar a rota, com a callback de req/res
+2- criar uma constante chamando o id como objeto e vinculando ao req.params
+3- criar uma variável let sql para SELECIONAR (select) TODOS (*) os dados de uma tabela ONDE (where) o id seja ?
+4- chamar a variável de conexão e .query, com a variável sql, o [id] e uma callback com erro/rows/fields
+5- para a resposta, trazer rows em formato json
+
+** DELETE id -- para deletar a tarefa daquele ID **
+1- criar a rota, com a callback de req/res
+2- criar uma constante chamando o id como objeto e vinculando ao req.params
+3- criar uma variável let sql para DELETAR (delete) os dados de uma tabela ONDE (where) o id seja a variável criada no passo 2
+4- chamar a variável de conexão e .query, com a variável sql e uma callback com erro/rows/fields
+5- para a resposta, trazer alguma frase de status em formato json
+
+** POST geral -- para incluir os dados no BD **
+1- criar a rota, com a callback de req/res
+2- criar uma constante chamando os campos da tabela como objeto e vinculando ao req.body
+3- criar uma variável let sql para INSERIR (insert) DENTRO (into) de uma tabela, com os nomes das colunas entre parenteses, e chamando os values com as variáveis da tabela criadas no passo 2 --> igual à forma de criar lá no MySQL
+4- chamar a variável de conexão e .query, com a variável sql e uma callback com erro/rows/fields
+5- para a resposta, trazer alguma frase de status em formato json
+
+** PUT id -- para atualizar a tarefa daquele ID **
+1- criar a rota, com a callback de req/res
+2- criar uma constante chamando o id como objeto e vinculando ao req.params
+3- criar uma constante chamando os campos da tabela como objeto e vinculando ao req.body
+4- criar uma variável let sql para ATUALIZAR (update) a tabela e SETAR (set) cada campo da tabela para as variáveis criadas no passo 3,  ONDE (where) o id seja a variável criada no passo 2
+5- chamar a variável de conexão e .query, com a variável sql e uma callback com erro/rows/fields
+6- para a resposta, trazer alguma frase de status em formato json
+
+//Exportar a rota
