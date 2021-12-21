@@ -1,5 +1,5 @@
 # Projeto App de Transferência Bancária
-Curso de aprendizado sobre o framework Angular 9, onde serão abordados os principais recursos da ferramenta aplicados numa SPA (Single Page Application) com CRUD de Produtos.
+Projeto sobre o framework Angular 9, realizado durante o Bootcamp da SoulCode Academy, onde serão abordados os principais recursos da ferramenta aplicados numa SPA (Single Page Application) com CRUD de Produtos.
 
 ## Frontend
 Este projeto foi gerado com Angular CLI versão 13.0.4.
