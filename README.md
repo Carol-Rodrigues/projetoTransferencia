@@ -1,8 +1,8 @@
 # Projeto App de Transferência Bancária
-Projeto do framework Angular 9, realizado durante o Bootcamp da SoulCode Academy, onde serão abordados os principais recursos da ferramenta aplicados numa SPA (Single Page Application) com CRUD de Produtos.
+Projeto do framework Angular 9, realizado durante o Bootcamp da SoulCode Academy, onde serão abordados os principais recursos da ferramenta aplicados numa SPA (Single Page Application) com CRUD de Transferências Bancária.
 
 ## Frontend
-Este projeto foi gerado com Angular CLI versão 13.0.4.
+Este projeto foi gerado com Angular CLI versão 13.0.4 e Angular Material versão 13.1.0.
 
 ### Development server
 Rode ng serve -o para um servidor de desenvolvimento. Navegue para http://localhost:4200/. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
