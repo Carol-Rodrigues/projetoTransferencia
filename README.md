@@ -1,13 +1,14 @@
-# projetoTransferencia
+# Projeto App de Transferência Bancária
+Curso de aprendizado sobre o framework Angular 9, onde serão abordados os principais recursos da ferramenta aplicados numa SPA (Single Page Application) com CRUD de Produtos.
 
 ## Frontend
-This project was generated with Angular CLI version 13.0.4.
+Este projeto foi gerado com Angular CLI versão 13.0.4.
 
 ### Development server
-Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+Rode ng serve -o para um servidor de desenvolvimento. Navegue para http://localhost:4200/. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
 ## Backend
-This project was generated with MySql version 2.18.1.
+Este projeto foi gerado com o MySql versão 2.18.1.
 
 ### Backend server
-Create a new conexao.js file, to connect with MySQL server. After this, run npm init and navigate to http://localhost:3306/.
+Crie um novo arquivo conexao.js, para conectar com o servidor MySQL. Depois disso, execute npm init e navegue até http://localhost:3306/.
